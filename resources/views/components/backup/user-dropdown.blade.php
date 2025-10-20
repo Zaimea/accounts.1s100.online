@@ -1,6 +1,6 @@
 <x-dropdown align="right" width="48">
     <x-slot name="trigger">
-        @if (\Zaimea\Groups\Fabric\Features::managesProfilePhotos())
+        @if (\Zaimea\Accounts\Features::managesProfilePhotos())
             <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                 <img class="size-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
             </button>
@@ -23,26 +23,18 @@
             {{ __('@i18n-groups::user-dropdown.manage_account') }}
         </div>
 
-        <x-dropdown-link href="{{ route('web.profile.show', Auth::user()) }}">
-            {{ __('@i18n-groups::user-dropdown.profile') }}
-        </x-dropdown-link>
-
-        <x-dropdown-link href="{{ route('web.user.settings') }}">
+        <x-dropdown-link href="{{ route('user.settings') }}">
             {{ __('@i18n-groups::user-dropdown.profile_settings') }}
         </x-dropdown-link>
 
-        @if (\Zaimea\Groups\Fabric\Features::hasApiFeatures())
-            <x-dropdown-link href="{{ route('web.api-tokens.index') }}">
+        @if (\Zaimea\Accounts\Features::hasApiFeatures())
+            <x-dropdown-link href="{{ route('api-tokens.index') }}">
                 {{ __('@i18n-groups::user-dropdown.api_tokens') }}
             </x-dropdown-link>
-            <x-dropdown-link href="{{ route('web.oauth-apps.index') }}">
+            <x-dropdown-link href="{{ route('oauth-apps.index') }}">
                 {{ __('OAuth Apps') }}
             </x-dropdown-link>
         @endif
-
-        <x-dropdown-link href="{{ route('web.tickets.index') }}">
-            {{ __('@i18n-groups::user-dropdown.support') }}
-        </x-dropdown-link>
 
         <div class="border-t border-gray-200 dark:border-gray-600"></div>
 

@@ -40,12 +40,6 @@
                         <x-icon name="map-pin" />
                         {{ $user->country }}, {{ $user->town }}
                     </div>
-                    <div class="mb-2 text-blueGray-600 mt-10">
-                      <x-icon name="briefcase" />
-                        @foreach ($user->allGroups() as $group)
-                        <p class="mb-4 text-lg leading-relaxed text-blueGray-700">{{ __('Group:') }} {{ $group->name }} {{ __('Role: Owner') }}</p>
-                        @endforeach
-                    </div>
                   </div>
                   <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
                     <div class="flex flex-wrap justify-center">

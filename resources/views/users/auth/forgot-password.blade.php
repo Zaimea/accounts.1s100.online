@@ -5,7 +5,7 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('@i18n-groups::auth.forgot_password?') }}
+            {{ __('@i18n-accounts::auth.forgot_password?') }}
         </div>
 
         @session('status')
@@ -20,13 +20,13 @@
             @csrf
 
             <div class="block">
-                <x-label for="email" value="{{ __('@i18n-groups::auth.email') }}" />
+                <x-label for="email" value="{{ __('@i18n-accounts::auth.email') }}" />
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('@i18n-groups::auth.reset_link') }}
+                    {{ __('@i18n-accounts::auth.reset_link') }}
                 </x-button>
             </div>
         </form>

@@ -6,11 +6,11 @@
 
         <div x-data="{ recovery: false }">
             <div class="mb-4 text-sm text-gray-600 dark:text-gray-400" x-show="! recovery">
-                {{ __('@i18n-groups::auth.tow_fa_please_confirm_access') }}
+                {{ __('@i18n-accounts::auth.tow_fa_please_confirm_access') }}
             </div>
 
             <div class="mb-4 text-sm text-gray-600 dark:text-gray-400" x-cloak x-show="recovery">
-                {{ __('@i18n-groups::auth.tow_fa_please_confirm_access_for_recovery_codes') }}
+                {{ __('@i18n-accounts::auth.tow_fa_please_confirm_access_for_recovery_codes') }}
             </div>
 
             <x-validation-errors class="mb-4" />
@@ -19,12 +19,12 @@
                 @csrf
 
                 <div class="mt-4" x-show="! recovery">
-                    <x-label for="code" value="{{ __('@i18n-groups::auth.code') }}" />
+                    <x-label for="code" value="{{ __('@i18n-accounts::auth.code') }}" />
                     <x-input id="code" class="block mt-1 w-full" type="text" inputmode="numeric" name="code" autofocus x-ref="code" autocomplete="one-time-code" />
                 </div>
 
                 <div class="mt-4" x-cloak x-show="recovery">
-                    <x-label for="recovery_code" value="{{ __('@i18n-groups::auth.recovery_code') }}" />
+                    <x-label for="recovery_code" value="{{ __('@i18n-accounts::auth.recovery_code') }}" />
                     <x-input id="recovery_code" class="block mt-1 w-full" type="text" name="recovery_code" x-ref="recovery_code" autocomplete="one-time-code" />
                 </div>
 
@@ -35,7 +35,7 @@
                                         recovery = true;
                                         $nextTick(() => { $refs.recovery_code.focus() })
                                     ">
-                        {{ __('@i18n-groups::auth.use_a_recovery_code') }}
+                        {{ __('@i18n-accounts::auth.use_a_recovery_code') }}
                     </button>
 
                     <button type="button" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 underline cursor-pointer"
@@ -45,11 +45,11 @@
                                         recovery = false;
                                         $nextTick(() => { $refs.code.focus() })
                                     ">
-                        {{ __('@i18n-groups::auth.use_an_authentication_code') }}
+                        {{ __('@i18n-accounts::auth.use_an_authentication_code') }}
                     </button>
 
                     <x-button class="ml-4">
-                        {{ __('@i18n-groups::auth.log_in') }}
+                        {{ __('@i18n-accounts::auth.log_in') }}
                     </x-button>
                 </div>
             </form>

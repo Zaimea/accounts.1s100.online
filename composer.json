@@ -1,15 +1,15 @@
 {
-    "name": "zaimea/gateway.1s100.online",
+    "name": "zaimea/accounts.1s100.online",
     "license": "MIT",
-    "homepage": "https://gateway.1s100.online",
-    "description": "Authentication gateway for Zaimea",
+    "homepage": "https://accounts.1s100.online",
+    "description": "Authentication accounts for Zaimea",
     "keywords": [
         "authentication",
         "registration",
         "zaimea",
         "zaimea.com",
         "groups.zaimea.com",
-        "gateway.1s100.online"
+        "accounts.1s100.online"
     ],
     "authors": [
         {
@@ -23,7 +23,11 @@
         "laravel/framework": "^12.0",
         "laravel/passport": "^13.0",
         "laravel/tinker": "^2.10.1",
-        "zaimea/gateway": "*"
+        "livewire/livewire": "^3.6",
+        "zaimea/commonredirects": "*",
+        "zaimea/accounts": "*",
+        "zaimea/i18n": "dev-main",
+        "zaimealabs/heroicons": "^1.0.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -38,7 +42,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/zaimea/gateway"
+            "url": "https://github.com/zaimea/accounts"
         }
     ],
     "autoload": {

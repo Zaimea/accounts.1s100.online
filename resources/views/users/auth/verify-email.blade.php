@@ -5,12 +5,12 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('@i18n-groups::auth.before_continuing') }}
+            {{ __('@i18n-accounts::auth.before_continuing') }}
         </div>
 
         @session('status' == 'verification-link-sent')
             <div class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
-                {{ __('@i18n-groups::auth.new_link_has_been_send') }}
+                {{ __('@i18n-accounts::auth.new_link_has_been_send') }}
             </div>
         @endsession
 
@@ -20,7 +20,7 @@
 
                 <div>
                     <x-button type="submit">
-                        {{ __('@i18n-groups::auth.resend_verification_email') }}
+                        {{ __('@i18n-accounts::auth.resend_verification_email') }}
                     </x-button>
                 </div>
             </form>
@@ -30,13 +30,13 @@
                     href="{{ route('web.user.settings') }}"
                     class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                 >
-                    {{ __('@i18n-groups::auth.edit_profile') }}</a>
+                    {{ __('@i18n-accounts::auth.edit_profile') }}</a>
 
                 <form method="POST" action="{{ route('logout') }}" class="inline">
                     @csrf
 
                     <button type="submit" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 ml-2">
-                        {{ __('@i18n-groups::auth.log_out') }}
+                        {{ __('@i18n-accounts::auth.log_out') }}
                     </button>
                 </form>
             </div>

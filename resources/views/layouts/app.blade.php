@@ -49,7 +49,6 @@
     </div>
     @stack('modals')
     @livewireScripts
-    @calendarScripts
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script>
         var notyf = new Notyf();

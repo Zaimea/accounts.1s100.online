@@ -9,7 +9,7 @@
 
     <x-slot name="form">
          {{-- Profile Photo --}}
-        @if (\Zaimea\Groups\Fabric\Features::managesProfilePhotos())
+        @if (\Zaimea\Accounts\Features::managesProfilePhotos())
             <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
                  {{-- Profile Photo File Input --}}
                 <input type="file" id="photo" class="hidden"
@@ -72,7 +72,7 @@
             <x-input id="email" type="email" class="mt-1 block w-full" wire:model="state.email" autocomplete="username" />
             <x-input-error for="email" class="mt-2" />
 
-            @if (\Zaimea\Groups\Fabric\Features::enabled(\Zaimea\Groups\Fabric\Features::emailVerification()) && ! $this->user->hasVerifiedEmail())
+            @if (\Zaimea\Accounts\Features::enabled(\Zaimea\Accounts\Features::emailVerification()) && ! $this->user->hasVerifiedEmail())
                 <p class="text-sm mt-2 dark:text-white">
                     {{ __('@i18n-groups::profile.your_email_address_is_unverified') }}
 

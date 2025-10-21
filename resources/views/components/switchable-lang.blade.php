@@ -19,7 +19,7 @@
         <x-slot name="content">
             <div x-cloak class="block px-4 py-2 text-xs text-gray-400">
                 @foreach(config('accounts.available_locales') as $available_locale => $locale_name)
-                    <x-dropdown-link href="{{ route('web.lang.switcher', $available_locale) }}">
+                    <x-dropdown-link href="{{ route('lang.switcher', $available_locale) }}">
                         <div class="flex space-x-2">
                             <img class="size-4 rounded-full object-cover"
                                 src="https://cdn.custura.de/flags/l/{{ strtoupper($available_locale) }}.svg"
@@ -38,7 +38,7 @@
         @foreach(config('accounts.available_locales') as $available_locale => $locale_name)
             @if($available_locale !== Auth::user()->language)
                 <a class="text-left leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800"
-                    href="{{ route('web.lang.switcher', $available_locale) }}">
+                    href="{{ route('lang.switcher', $available_locale) }}">
             @endif
                 <div class="flex space-x-1">
                     <img class="size-4 rounded-full object-cover"

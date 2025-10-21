@@ -43,7 +43,7 @@ class UserNotifications extends Component
      *
      * @param bool $value
      */
-    public function handleNotificationsToggle(bool $value = null): void
+    public function handleNotificationsToggle(bool $value = false): void
     {
         $this->notificationsManager = $value;
     }
@@ -83,7 +83,7 @@ class UserNotifications extends Component
     private function toCalendarEvent($eventId)
     {
         session()->flash('notificationRecord', $eventId);
-        redirect()->route('web.group.records', ['group' => $this->user->currentGroup->id]);
+        redirect()->route('group.records', ['group' => $this->user->currentGroup->id]);
     }
 
     /**

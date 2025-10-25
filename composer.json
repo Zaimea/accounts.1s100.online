@@ -27,6 +27,7 @@
         "zaimea/commonredirects": "*",
         "zaimea/accounts": "*",
         "zaimea/i18n": "dev-main",
+        "zaimea/laravel-oauth2-client": "dev-main",
         "zaimealabs/heroicons": "^1.0.1"
     },
     "require-dev": {

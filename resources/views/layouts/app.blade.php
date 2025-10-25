@@ -44,7 +44,12 @@
         @endif
          {{-- Page Content --}}
         <main>
-            {{ $slot }}
+            @isset($slot)
+                {{ $slot }}
+            @endisset
+            @hasSection('content')
+                @yield('content')
+            @endif
         </main>
     </div>
     @stack('modals')

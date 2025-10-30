@@ -9,11 +9,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\Contracts\OAuthenticatable;
 use Zaimea\Accounts\User\Traits\MergeUser;
+use Zaimea\SocialiteExtender\Traits\HasSocialAccounts;
 
 class User extends Authenticatable implements OAuthenticatable, MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, MergeUser;
+    use HasSocialAccounts, HasFactory, Notifiable, MergeUser;
 
     /**
      * The attributes that are mass assignable.

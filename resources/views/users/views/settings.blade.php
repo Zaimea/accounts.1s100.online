@@ -13,6 +13,9 @@
                 <x-section-border />
             @endif
 
+            @include('socialite-extender::profile.github-connect')
+            <x-section-border />
+
             @if (\Zaimea\Accounts\Features::canManageTwoFactorAuthentication())
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.two-factor-authentication-form')
